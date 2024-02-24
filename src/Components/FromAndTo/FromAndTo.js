@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../../caraousel.module.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Carousel from '../Caraousel/Caraousel';
 
 function FromAndTo() {
     const navigate = useNavigate()
@@ -10,25 +11,6 @@ function FromAndTo() {
     const [Destination, setDestination] = useState('');
     const [TravelDate, setDate] = useState('');
 
-    // const handleSearch = () => {
-    //     // Redirect to BusList component with parameters
-    //     navigate(`/buslist/${origin}/${destination}/${date}`);
-    //   };
-
-
-    // const handleSearch = async () => {
-    //   try {
-    //     const response = await axios.get('http://localhost:5263/api/Bus/search', {
-    //       params: { Origin, Destination, TravelDate },
-    //     });
-    //     console.log(response)
-    //     // navigate('/bus-list', { state: { buses: response.data } });
-    //     navigate(`/bus-list/${Origin}/${Destination}/${TravelDate}`);
-
-    //   } catch (error) {
-    //     console.error('Error searching buses:', error);  
-    //   }
-
 
 
       const handleSearch = async () => {
@@ -36,9 +18,7 @@ function FromAndTo() {
           const response = await axios.get('http://localhost:5263/api/Bus/search', {
             params: { Origin, Destination, TravelDate },
           });
-      
-          // navigate(`/bus-list/${Origin}/${Destination}/${TravelDate}`, { state: { buses: response.data } }); // Pass the fetched data to the Bus component
-          navigate('/bus-list', { state: { buses: response.data } }); // Pass the fetched data to the Bus component
+                navigate('/bus-list', { state: { buses: response.data } }); // Pass the fetched data to the Bus component
           console.log(response.data)
         } catch (error) {
           console.error('Error searching buses:', error);
@@ -56,6 +36,7 @@ function FromAndTo() {
 
 
   return (
+    <div><Carousel/>
     <div className={styles.fromAndTo}>
       <div className={styles.a}>
         <div className={styles.ikHMPa}>
@@ -122,6 +103,7 @@ function FromAndTo() {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 }

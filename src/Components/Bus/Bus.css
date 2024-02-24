@@ -420,3 +420,84 @@ html[dir='ltr'] .appendRight10 {
     /* Adjust other styles as needed */
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ------------side filter style */
+/* styles.css */
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    float: left; /* Float the sidebar to the left */
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 15px;
+}
+
+.sidebar input[type="checkbox"] {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.sidebar label {
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Checkbox custom styling */
+.sidebar input[type="checkbox"] + label:before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+    transition: border-color 0.3s;
+}
+
+.sidebar input[type="checkbox"]:checked + label:before {
+    background-color: #007bff;
+    border-color: #007bff;
+}
