@@ -3,27 +3,34 @@ import './Bus.css';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectBus } from '../Redux/Actions';
 
 function Bus() {
 
   const location = useLocation();
   const navigate = useNavigate();
   const { buses } = location.state;
-
-  // function toggleSeating() {
-  //   navigate('/seating'); // Navigate to '/seating' when button is clicked
-  // }
-  
   const handleSelectSeats = (busId) => {
     navigate(`/seating/${busId}`); // Navigate to '/seating/:busId' where :busId is the actual bus ID
   };
 
-  // console.log(handleSelectSeats);
+
+  // const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const buses = useSelector(state => state.buses); // Assuming buses are stored in Redux state
+  // console.log(buses);
+  // const handleSelectSeats = (busId) => {
+  //   dispatch(selectBus(busId));
+  //   navigate(`/seating/${busId}`);
+  // };
+
 
   return (
     <div>
     {buses.map(bus => (
     <div key={bus.busId}>
+      
     <div id="busList" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', backgroundColor: 'rgb(245, 245, 245)' }}>
       
       <div style={{ margin: 'auto' }}>
@@ -80,9 +87,11 @@ function Bus() {
                   </ul>
                   {/* <div className="sc-jKJlTe fnCpOO select-seats">Select Seats</div> */}
                   
-                  <button className="sc-jKJlTe fnCpOO select-seats" 
+                  {/* <button className="sc-jKJlTe fnCpOO select-seats" 
                   onClick={() => handleSelectSeats(bus.busId)}
-                  >
+                  > */}
+                    <button className="sc-jKJlTe fnCpOO select-seats"
+                     onClick={() => handleSelectSeats(bus.busId)}>
                     Select Seats
               {/* {showSeating ? 'Hide Seats' : 'Select Seats'} */}
             </button>

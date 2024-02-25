@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 // Define the Carousel component
-function Carousel() {
+function Caraousel() {
   useEffect(() => {
     // Initialize the Bootstrap carousel
     const carousel = document.querySelector('.carousel');
@@ -32,4 +32,4 @@ function Carousel() {
   );
 }
 
-export default Carousel;
+export default Caraousel;
