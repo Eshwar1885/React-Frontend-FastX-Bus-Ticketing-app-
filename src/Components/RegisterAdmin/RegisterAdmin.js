@@ -34,12 +34,10 @@ function RegisterAdmin() {
     .then(res => {
         // Handle successful registration
         console.log("Registration successful"); // For debugging
-        // Implement logic for successful registration, e.g., redirecting to login page
     })
     .catch(err => {
         // Handle registration failure
         console.error("Registration failed:", err); // For debugging
-        // Implement logic for handling registration failure, e.g., displaying error message
     });
             
     };

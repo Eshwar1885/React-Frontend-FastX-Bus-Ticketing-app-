@@ -70,27 +70,6 @@ const SeatingArrangement = () => {
 
 
 
-  
-      
-// return (
-//   <div className="bus">
-//       <h2>Select and book your seats:</h2>
-//     <div className="seatside">
-      
-//     </div>
-// <ol className="cabin seatside">
-// {availableSeats.map(seat => (
-//   <li className={`seat ${seat.isAvailable ? 'available' : 'unavailable'}`} key={seat.seatId}>
-//     <input type="checkbox" id={seat.seatNumber} disabled={!seat.isAvailable} />
-//     <label htmlFor={seat.seatNumber}>{seat.seatNumber}</label>
-//   </li>
-// ))}
-// </ol> </div>
-//   );
-// };
-
-
-
 
 
 return (
@@ -135,9 +114,6 @@ return (
       ))}
     </ol>
     <div className="seatside"></div>
-
-{/* ===if none of the seats are clicked the buttoon should not be clickable=== */}
-{/* add a private route */}
 
     <div className="text-right mb-4 mr-4">
     <Link to="/details">

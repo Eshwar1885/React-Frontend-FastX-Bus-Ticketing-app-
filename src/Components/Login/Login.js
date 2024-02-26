@@ -51,17 +51,17 @@ var login = (e) => {
                                 <div className="form-input">
                                     <h2>Enter Credentials</h2>
                                     <form >
-                                        <div class="form-group">
+                                        <div className="form-group">
                                             <input className="loginInfo" type="text" name="name" autoComplete="off" value={username} 
             onChange={(e)=>setUsername(e.target.value)} required />
                                             <label>Username</label>
                                         </div>
-                                        <div class="form-group">
+                                        <div className="form-group">
                                             <input className="loginInfo" type="password" name="password" autoComplete="off" value={password} 
             onChange={(e)=>setPassword(e.target.value)} required />
                                             <label>Password</label>
                                         </div>
-                                        <div class="myform-button">
+                                        <div className="myform-button">
                                             <button onClick={login} type="submit" className="myform-btn">Login</button >
                                         </div>
                                         <div>
