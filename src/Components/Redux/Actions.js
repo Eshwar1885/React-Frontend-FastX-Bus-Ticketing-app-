@@ -12,6 +12,11 @@ export const SELECT_TRAVELDATE= 'SELECT_TRAVELDATE';
 
 export const SAVE_SELECTED_SEATS= 'SAVE_SELECTED_SEATS';
 
+export const SET_BUS_INFO= 'SET_BUS_INFO';
+
+
+
+
 // Action creators
 export const selectOrigin = (origin) => ({
   type: SELECT_ORIGIN,
@@ -56,4 +61,12 @@ export const selectTravelDate = (travelDate) => ({
 export const saveSelectedSeats = (selectedSeats) => ({
   type: SAVE_SELECTED_SEATS,
   payload: selectedSeats,
+});
+
+
+
+
+export const setBusInfo = (busName, busType, busId) => ({
+  type: SET_BUS_INFO, // Use the action type constant
+  payload: { busName, busType, busId }
 });

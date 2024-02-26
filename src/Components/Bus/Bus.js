@@ -4,16 +4,22 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectBus } from '../Redux/Actions';
+import { setBusInfo } from '../Redux/Actions';
 
 function Bus() {
 
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const { buses } = location.state;
-  const handleSelectSeats = (busId) => {
+  const handleSelectSeats = (busId, busName, busType) => {
+    dispatch(setBusInfo(busName, busType, busId));
     navigate(`/seating/${busId}`); // Navigate to '/seating/:busId' where :busId is the actual bus ID
   };
+  // console.log(setBusInfo);
+  // const busInfo = useSelector(state => state.busInfo);
+
+  // console.log('Bus Info:', busInfo);
 
 
   // const navigate = useNavigate();
@@ -91,7 +97,7 @@ function Bus() {
                   onClick={() => handleSelectSeats(bus.busId)}
                   > */}
                     <button className="sc-jKJlTe fnCpOO select-seats"
-                     onClick={() => handleSelectSeats(bus.busId)}>
+                     onClick={() => handleSelectSeats(bus.busId, bus.busName, bus.busType)}>
                     Select Seats
               {/* {showSeating ? 'Hide Seats' : 'Select Seats'} */}
             </button>

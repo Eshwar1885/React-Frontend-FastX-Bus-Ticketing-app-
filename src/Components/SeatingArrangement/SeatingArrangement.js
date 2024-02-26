@@ -52,8 +52,10 @@ const SeatingArrangement = () => {
     const isChecked = document.getElementById(seatNumber).checked;
     if (isChecked) {
       setTotalCost(prevCost => prevCost + seatPrice);
+      dispatch(saveSelectedSeats([...selectedSeats, { seatNumber, seatPrice }]));
     } else {
       setTotalCost(prevCost => prevCost - seatPrice);
+      dispatch(saveSelectedSeats(selectedSeats.filter(seat => seat.seatNumber !== seatNumber)));
     }
 
     // Update selected seats in Redux store
@@ -106,16 +108,20 @@ return (
               // console.log(seat)
               // const isSeatAvailable = availableSeats.includes(seatNumber);
               const isSeatAvailable = availableSeats.some(seat => seat.seatId === seatNumber);
-              
+              const isSeatSelected = selectedSeats.some(seat => seat.seatNumber === seatNumber);
               // console.log(isSeatAvailable)
               // console.log(seatNumber)
               return (
                 <li
                   key={`seat-${seatNumber}`}
                   // data-price={isSeatAvailable ? seat.seatPrice : ''}
-                  className={`seat ${isSeatAvailable ? 'available' : 'unavailable'}`}
+                  // className={`seat ${isSeatAvailable ? 'available' : 'unavailable'}`}
+                  className={`seat ${isSeatAvailable ? 'available' : 'unavailable'} ${isSeatSelected ? 'selected' : ''}`}
+
                 >
-                  <input type="checkbox" id={seatNumber} disabled={!isSeatAvailable}
+                  <input type="checkbox" id={seatNumber}
+                  disabled={!isSeatAvailable || isSeatSelected}
+                  checked={isSeatSelected}
                   onChange={() => handleSeatSelection(seatNumber, seat.seatPrice)}
                   />
                   <label htmlFor={seatNumber} 

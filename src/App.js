@@ -30,11 +30,11 @@ function App() {
               {/* <Route path="/register" element={<Register />} /> */}
                 <Route path="/login" element={<Login />} />
                 <Route path="/new" element={<New/>} />
-                <Route path="/details" element={<BookingDetails />} />
+                {/* <Route path="/details" element={<BookingDetails />} /> */}
                 <Route path="/" element={<FromAndTo/>} />
-                {/* <Route element={<PrivateRoute/>}>
-                  <Route path="/new-page" element={<New/>} />
-                </Route> */}
+                <Route element={<PrivateRoute/>}>
+                  <Route path="/details" element={<BookingDetails />} />
+                </Route>
                 
 
                 <Route path="/bus-list" element={<Bus />} />

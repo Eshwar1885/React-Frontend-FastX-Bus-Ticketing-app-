@@ -23,8 +23,11 @@ var login = (e) => {
         .then(res => {
             sessionStorage.setItem("token", res.data.token);
             sessionStorage.setItem("username", res.data.username);
+            sessionStorage.setItem("userId",res.data.userId);
             alert("Login success - " + res.data.username);
             setLoggedin(true);
+
+            console.log(res.data);
             
         })
         .catch(err => {

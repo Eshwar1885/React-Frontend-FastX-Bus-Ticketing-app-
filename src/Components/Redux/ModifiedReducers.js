@@ -11,6 +11,8 @@ import {
 
   SAVE_SELECTED_SEATS,
 
+  SET_BUS_INFO,
+
 } from './Actions';
 
 // Initial state
@@ -22,6 +24,9 @@ const initialState = {
   // selectedSeats: [],
 
   selectedSeats: [],
+
+  busName: '',
+  busType: ''
 };
 
 // Reducers
@@ -111,6 +116,20 @@ const saveSelectedSeatsReducer = (state = [], action) => {
 
 
 
+const busInfoReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case 'SET_BUS_INFO':
+      return {
+        ...state,
+        busName: action.payload.busName,
+        busType: action.payload.busType,
+        busId : action.payload.busId
+      };
+    default:
+      return state;
+  }
+};
+
 
 
 
@@ -126,7 +145,8 @@ const rootReducer = combineReducers({
   // availableSeats: availableSeatsReducer,
   // totalCost: totalCostReducer,
 
-  selectedSeats: saveSelectedSeatsReducer
+  selectedSeats: saveSelectedSeatsReducer,
+  busInfo: busInfoReducer
 });
 
 export default rootReducer;
