@@ -5,6 +5,7 @@ import axios from 'axios';
 import Caraousel from '../Caraousel/Caraousel';
 import { useSelector, useDispatch } from 'react-redux'; // Importing useSelector and useDispatch from react-redux
 import { selectOrigin, selectDestination, selectTravelDate } from '../Redux/Actions'; // Corrected path
+import Navbar from '../Navbar/Navbar';
 
 
 
@@ -54,6 +55,7 @@ function FromAndTo() {
 
     return (
         <div>
+            <Navbar/>
             <Caraousel />
             <div className={styles.fromAndTo}>
                 <div className={styles.a}>
@@ -62,7 +64,8 @@ function FromAndTo() {
                             <div className={styles.outerContainer}>
                                 <div className={styles.btnStyle}>
                                     <div className={styles.iconStyle}>
-                                        <i></i>
+                                    <i className="fa-solid fa-bus ${styles.newStyle}"></i>
+
                                         <div className={styles.outerinputStyle}>
                                             <div className={styles.inputStyle}>
                                                 <input
@@ -80,13 +83,16 @@ function FromAndTo() {
                                 </div>
                             </div>
                         </div>
-                        <div className={styles.jVMfHp}>
+                        {/* <div className={styles.jVMfHp}>
                             <i className={`${styles['fa-solid']} ${styles['fa-arrows-left-right']} ${styles.newStyle}`}></i>
+                        </div> */}
+                        <div className={styles.jVMfHp}>
+                <i className="fa-solid fa-arrows-left-right ${styles.newStyle}"></i>
                         </div>
                         <div className={styles.outerContainer}>
                             <div role="button" className={styles.btnStyle}>
                                 <div className={styles.destIcon}>
-                                    <i className={`${styles.destIconStyle} icon icon-dest`}></i>
+                                <i className="fa-solid fa-bus ${styles.newStyle}"></i>
                                     <div className={styles.outerinputStyle}>
                                         <div className={`${styles['sc-htoDjs']} inputStyle`}>
                                             <input
@@ -112,6 +118,7 @@ function FromAndTo() {
                 </div>
             </div>
         </div>
+        
     );
 }
 

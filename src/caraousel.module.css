@@ -19,7 +19,6 @@
       margin: 0 auto;
       /* background: white; */
       background:rgba(255, 255, 255, 0.2);
-      /* background: rgba(141, 138, 211, 0.46); */
       border-radius: 10px;
       height: 250px;
       position: absolute;
@@ -29,10 +28,8 @@
       right: 0;
   
   }
-  /* ------------------ */
   .a {
     display: flex;
-    /* background: black; */
     width: 100%;
    
     justify-content: center;
@@ -47,7 +44,6 @@
   .ikHMPa {
     display: flex;
     position: relative;
-    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 12px, rgba(0, 0, 0, 0.05) 0px 0px 0px; */
     border-radius: 32px;
     cursor: pointer;
   
@@ -76,6 +72,7 @@
     height: inherit;
     position: relative;
   }
+
   .inputStyle {
     margin-top: 1.5rem;
   }
@@ -90,7 +87,7 @@
     border: none;
     padding: 0px;
     background: transparent;
-  }
+  }  
   .bIZuun {
     position: absolute;
     left: 2rem;
@@ -119,6 +116,7 @@
   .newStyle {
     font-size: 22px;
   }
+  
   .outerContainer {
     position: relative;
   }
@@ -150,49 +148,7 @@
     font-size: 16px;
     line-height: 18px;
   }
-  /* .cvRLz {
-    width: 210px;
-    background-color: rgb(255, 255, 255);
-    height: 112px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    position: relative;
-    border-left: 1px solid rgb(224, 224, 224);
-  } */
-  /* .CalendarContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: 2rem;
-    gap: 13px;
-  } */
-  /* .NyvQv {
-    font-size: 24px;
-  } */
-  /* .llxTcS {
-    display: flex;
-    flex-direction: column;
-  } */
-  /* .llxTcS .dayText {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    color: rgb(126, 126, 140);
-    margin-bottom: 6px;
-  }
-  .llxTcS .dayText {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 17px;
-    
-  } */
-  /* .llxTcS .yearText {
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-    color: rgb(126, 126, 140);
-  } */
+  
   .busBtn {
     width: 243px;
     padding: 40px;
@@ -212,7 +168,7 @@
   
   
   
-  /* -------------- */
+
   
   
   
@@ -223,123 +179,7 @@
   }
   
   
-  /* @media (max-width: 768px) {
-    .fromAndTo {
-      width: 80%; 
-      max-width: 400px; 
-      margin: 50px auto; 
-      background: rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
   
-    .a {
-      width: 100%;
-    }
-  
-    .ikHMPa {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .iconStyle,
-    .destIcon,
-    .cvRLz {
-      width: 100%;
-      border-radius: 10px;
-      border-left: none; 
-    }
-  
-    
-  
-    .jVMfHp {
-      margin-top: 10px;
-    }
-  
-    .busBtn {
-      width: 100%;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-  }
-   */
-
-   /*
-   @media (max-width: 768px) {
-    .fromAndTo {
-      width: 80%;
-      max-width: 400px;
-      margin: 50px auto;
-      background: rgba(255, 255, 255, 0.2);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      position: relative;
-      z-index: 2;
-    }
-  
-    .trending-offers {
-      margin-top: 30px; 
-      margin-bottom: 20px; 
-      position: relative;
-      z-index: 1;
-    }
-  
-    .a {
-      width: 100%;
-    }
-  
-    .ikHMPa {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .iconStyle,
-    .destIcon,
-    .cvRLz {
-      width: 100%;
-      border-radius: 10px;
-      border-left: none;
-    }
-  
-    .jVMfHp {
-      margin-top: 10px;
-    }
-  
-    .busBtn {
-      width: 100%;
-      margin-top: 20px;
-      border-radius: 10px;
-    }
-  
-    .trending-offers .container {
-      overflow-x: auto;
-      white-space: nowrap;
-      padding-right: 20px; 
-    }
-  
-    .trending-offers .row {
-      flex-wrap: nowrap;
-      justify-content: flex-start;
-    }
-  
-    .trending-offers .col-md-4 {
-      flex: 0 0 auto;
-      width: auto;
-      margin-right: 15px;
-    }
-  
-    .trending-offers .card {
-      width: 100%;
-    }
-  }
-  
-  
-    */
-  /* ______________________ */
   
   .card-gradient {
     height: 150px; 
@@ -372,16 +212,6 @@
     color: #fff; 
   }
   
-  /* @media (max-width: 768px) {
-    .search-form {
-      width: 100%;
-      margin: 20px 0;
-    }
-  
-    .trending-offers {
-      margin-top: 20px;
-    }
-  } */
   
   @media (max-width: 768px) {
     .navbar.bg-dark .navbar-brand,
@@ -405,7 +235,7 @@
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       position: relative;
       z-index: 2;
-      top: 20px; /* Adjusted top position */
+      top: 20px; 
     }
 
     
@@ -440,7 +270,7 @@
       border-radius: 10px;
     }
     .trending-offers {
-        margin-top: 100px; /* Adjusted margin-top */
+        margin-top: 100px;
         margin-bottom: 20px;
         position: relative;
         z-index: 1;
@@ -452,10 +282,7 @@
       padding-right: 20px;
       margin-top: 8rem!important;
     }
-    /* .mt-5, .my-5 {
-        margin-top: 8rem!important;
-    }
-   */
+
     .trending-offers .row {
       flex-wrap: nowrap;
       justify-content: flex-start;
@@ -479,4 +306,4 @@
       width: 100%;
     }
   }
-  
+  /* ============================== */

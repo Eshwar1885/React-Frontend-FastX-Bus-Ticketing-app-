@@ -15,8 +15,8 @@ a, a:hover {
     position: relative;
     /* background-image: url('https://img.freepik.com/premium-vector/bus-city-service-graphic-design-vector-illustration_620585-388.jpg'); */
     padding-top: 100px;
-    padding-bottom: 100px;
-    background-size: cover;
+    /* padding-bottom: 100px; */
+    /* background-size: cover; */
     background-position: center;
 }
 
@@ -189,7 +189,7 @@ a, a:hover {
 @media only screen and (min-width: 601px) {
     .myform-area .form-area {
         width: 750px;
-        height: 638px;
+        height: 700px;
     }
 
     .myform-area .form-area .form-content,

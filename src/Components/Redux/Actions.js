@@ -14,6 +14,11 @@ export const SAVE_SELECTED_SEATS= 'SAVE_SELECTED_SEATS';
 
 export const SET_BUS_INFO= 'SET_BUS_INFO';
 
+export const RESET_SELECTED_SEATS = 'RESET_SELECTED_SEATS';
+
+export const SET_BOOKING_ID = 'SET_BOOKING_ID';
+
+
 
 
 
@@ -69,4 +74,16 @@ export const saveSelectedSeats = (selectedSeats) => ({
 export const setBusInfo = (busName, busType, busId) => ({
   type: SET_BUS_INFO, // Use the action type constant
   payload: { busName, busType, busId }
+});
+
+
+
+export const resetSelectedSeats = () => ({
+  type: RESET_SELECTED_SEATS,
+});
+
+
+export const setBookingId = (bookingId) => ({
+  type: SET_BOOKING_ID,
+  payload: bookingId,
 });

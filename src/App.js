@@ -12,6 +12,10 @@ import SeatingArrangement from './Components/SeatingArrangement/SeatingArrangeme
 import New from './Components/New/New';
 import PrivateRoute from './Components/PrivateRoutes/PrivateRoute';
 import BookingDetails from './Components/New/BookingDetails';
+import Payment from './Components/Payment/Payment';
+import Navbar from './Components/Navbar/Navbar';
+import AddBus from './Components/BusOperator/AddBus/AddBus';
+import Main from './Components/Main/Main';
 
 
 
@@ -27,20 +31,32 @@ function App() {
             {/* <Bus/> */}
             <BrowserRouter>
               <Routes>
-              {/* <Route path="/register" element={<Register />} /> */}
+              <Route path="/main" element={<Main />} />
+
+              <Route path="/register" element={<Register />} />
+              <Route path="/registerbusoperator" element={<RegisterBusOperator />} />
+              <Route path="/registeradmin" element={<RegisterAdmin />} />
+
+
                 <Route path="/login" element={<Login />} />
                 <Route path="/new" element={<New/>} />
                 {/* <Route path="/details" element={<BookingDetails />} /> */}
-                <Route path="/" element={<FromAndTo/>} />
+                <Route path="/home" element={<FromAndTo/>} />
                 <Route element={<PrivateRoute/>}>
                   <Route path="/details" element={<BookingDetails />} />
                 </Route>
+
                 
 
                 <Route path="/bus-list" element={<Bus />} />
                  {/* <Route path="/seating" element={<SeatingArrangement/>}/> */}
                 <Route path="/seating/:busId" element={<SeatingArrangement />} />
                 <Route path="/details" element={<BookingDetails />} />
+                <Route path="/payment" element={<Payment/>}/>
+                <Route path="/nav" element={<Navbar/>}/>
+
+                {/* busoperator actions */}
+                <Route path="/addbus" element={<AddBus/>}/>
 
                  
               </Routes>

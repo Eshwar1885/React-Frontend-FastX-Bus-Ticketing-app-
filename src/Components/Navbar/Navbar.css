@@ -1,0 +1,9 @@
+
+  
+  @media (max-width: 768px) {
+    .navbar.bg-dark .navbar-brand,
+    .navbar.bg-dark .navbar-toggler-icon {
+      color: rgb(255, 255, 255) !important;
+    }
+  }
+

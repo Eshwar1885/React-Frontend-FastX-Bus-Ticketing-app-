@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import './BookingDetails.css';
+import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { setBookingId } from '../Redux/Actions';
+
 
 function BookingDetails() {
-    // Dummy data
+  const dispatch = useDispatch();
+
+
     const origin = useSelector(state => state.origin);
     const destination = useSelector(state => state.destination); 
     const travelDate = useSelector(state =>state.travelDate); 
@@ -31,6 +37,9 @@ const userId = sessionStorage.getItem('userId'); // Get userId from session stor
 const seatIdsSet = new Set(selectedSeats.map(seat => seat.seatNumber));
 const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
 
+// const [bookingId, setBookingId] = useState(null); // State variable to store booking ID
+
+
 
     const handleBooking = async () => {
       const bookingData = {
@@ -51,8 +60,12 @@ const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
           });
 
           if (response.ok) {
-              console.log('Booking successful');
+                // setBookingId(data.bookingId); // Set booking ID received from API response
+                // console.log('Booking successful. Booking ID:', data.bookingId);
               // Redirect or perform any other actions upon successful booking
+
+              const data = await response.json();
+              dispatch(setBookingId(data.bookingId)); // Dispatch action to store bookingId in Redux store
           } else {
               console.error('Failed to make booking');
           }
@@ -86,8 +99,11 @@ const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
                 <p className="bookedForWhichDate">Booked For Which Date: {travelDate.travelDate}</p>
                 <p className="origin">Origin: {origin.origin}</p>
                 <p className="destination">Destination: {destination.destination}</p>
+                <Link to="/payment">
+                {/* <Link to={bookingId ? `/payment/${bookingId}` : "#"}> */}
                 {/* Continue Button */}
                 <button className="continueButton" onClick={handleBooking}>Continue</button>
+                </Link>
               </div>
             </div>
           </div>
