@@ -17,13 +17,14 @@ function Main(){
             <div className="content">
                 <h1>Explore the World with FastX Bus Services</h1>
                 <div>
-                    <Link to="/home">
+                    <Link to="/">
                         <button type="button" className='buttonStyle'>Book Your Bus</button>
                         </Link>
 
                     <Link to="/registerbusoperator">
                         <button type="button" className='buttonStyle'>Bus Operators, Register Here</button>
                         </Link>
+                        
                 </div>
             </div>
         </div>

@@ -142,7 +142,7 @@ function AddBus(){
                         {amenities.map(amenity => (
                             <option  key={amenity.amenityId} value={amenity.name}>{amenity.name}</option>
                         ))}
-                        <option value="other">Other (Please Specify)</option> {/* Replace "custom" with "other" */}
+                        {/* <option value="other">Other (Please Specify)</option> */}
                     </select>
                     {/* Show input field if "other" option is selected */}
     {selectedAmenity === "other" && (

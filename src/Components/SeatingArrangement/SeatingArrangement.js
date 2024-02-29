@@ -289,7 +289,8 @@ return (
 
     <div className="text-right mb-4 mr-4">
     <Link to="/details">
-      <button id="confirmBookingBtn" type="button" className="btn btn-primary" >
+      <button id="confirmBookingBtn" type="button" className="btn btn-primary"     disabled={selectedSeats.length === 0} // Disable button if no seats are selected
+ >
         Confirm Booking
       </button>
       </Link>

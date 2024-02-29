@@ -1,5 +1,7 @@
 import './Navbar.css';
-function Navbar(){
+function Navbar({ loggedin }){
+  console.log({loggedin});
+
 
     return(
        <div>
@@ -17,9 +19,16 @@ function Navbar(){
             {/* <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="userprofile.html">Profile</a>
             </li> */}
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <a className="nav-link active" aria-current="page" href="login.html">Login/Signup</a>
-            </li>
+            </li> */}
+            <li className="nav-item">
+                                {loggedin ? (
+                                    <button className="nav-link active logout-btn">Logout</button>
+                                ) : (
+                                    <a className="nav-link active" aria-current="page" href="login.html">Login/Signup</a>
+                                )}
+                            </li>
           </ul>
         </div>
       </div>

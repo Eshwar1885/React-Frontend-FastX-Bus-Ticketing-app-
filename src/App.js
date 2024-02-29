@@ -16,6 +16,9 @@ import Payment from './Components/Payment/Payment';
 import Navbar from './Components/Navbar/Navbar';
 import AddBus from './Components/BusOperator/AddBus/AddBus';
 import Main from './Components/Main/Main';
+import BusDetails from './Components/BusDetails/BusDetails';
+import BusActions from './Components/BusActions/BusActions';
+import BookingHistory from './Components/BookingHistory/BookingHistory';
 
 
 
@@ -41,7 +44,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/new" element={<New/>} />
                 {/* <Route path="/details" element={<BookingDetails />} /> */}
-                <Route path="/home" element={<FromAndTo/>} />
+                <Route path="/" element={<FromAndTo/>} />
                 <Route element={<PrivateRoute/>}>
                   <Route path="/details" element={<BookingDetails />} />
                 </Route>
@@ -57,6 +60,12 @@ function App() {
 
                 {/* busoperator actions */}
                 <Route path="/addbus" element={<AddBus/>}/>
+
+                <Route path="/busdetails" element={<BusDetails/>}/>
+                <Route path="/busactions" element={<BusActions/>}/>
+                <Route path="/bookinghistory" element={<BookingHistory/>}/>
+
+
 
                  
               </Routes>

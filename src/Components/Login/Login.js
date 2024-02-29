@@ -1,10 +1,16 @@
 import { useState } from 'react';
 import axios from 'axios'; // Import Axios
 import './Login.css';
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import Navbar from '../Navbar/Navbar';
+
 function Login(){
 var [username, setUsername] = useState("");
 var [password, setPassword] = useState("");
 var [loggedin, setLoggedin] = useState(false);
+const navigate = useNavigate(); // Initialize useNavigate
+
 
 var user = {};
 
@@ -26,6 +32,12 @@ var login = (e) => {
             sessionStorage.setItem("userId",res.data.userId);
             alert("Login success - " + res.data.username);
             setLoggedin(true);
+            console.log({loggedin});
+
+
+            // Redirect to details page
+            navigate("/details");
+
 
             console.log(res.data);
             
@@ -39,7 +51,9 @@ var login = (e) => {
     return(
 
         <div className="container">
+                        {/* <Navbar loggedin={loggedin} /> */}
             <section className="myform-area">
+                
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-lg-8">
@@ -62,7 +76,9 @@ var login = (e) => {
                                             <label>Password</label>
                                         </div>
                                         <div className="myform-button">
+                                            {/* <Link to="/details"> */}
                                             <button onClick={login} type="submit" className="myform-btn">Login</button >
+                                            {/* </Link> */}
                                         </div>
                                         <div>
                                             <small className="form-text text-muted signup-text">Don't have an Account?

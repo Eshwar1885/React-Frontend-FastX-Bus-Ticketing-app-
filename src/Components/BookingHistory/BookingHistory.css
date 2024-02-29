@@ -1,0 +1,167 @@
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+} */
+
+.container-fluid {
+    background-color: #f8f9fa;
+    padding: 20px;
+    width: 100%;
+    
+}
+
+.nav-tabs {
+    border: none;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: -1px;
+}
+
+.nav-tabs .nav-link {
+    border: none;
+    border-radius: 0;
+    padding: 15px;
+    background-color: #fff;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.tab-content {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.tab-pane h4 {
+    color: #007bff;
+}
+
+.tab-pane p {
+    color: #343a40;
+}
+
+.busCardContainer {
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+
+}
+
+
+
+        @media only screen and (max-width: 768px) {
+            .busCardContainer {
+                width: 100%;
+
+            }
+        }
+
+
+
+        .busListingContainer .busCard {
+            -webkit-font-smoothing: antialiased;
+            width: 25%;
+            border-radius: 16px 16px 0 0;
+            padding: 16px 20px;
+        }
+        .makeFlex {
+            display: flex;
+        }
+        .busListingContainer .busCard .busInfo {
+            width: 18vw;
+            margin-right: 50px;
+        }
+        .makeFlex.column {
+            flex-direction: column;
+        }
+        .appendBottom22 {
+            margin-bottom: 22px;
+        }
+        html[dir='ltr'] .appendRight15 {
+            margin-right: 15px;
+        }
+        .makeFlex.hrtlCenter {
+            align-items: center;
+        }
+        
+        
+        .makeFlex {
+            display: flex;
+        }
+        .makeFlex {
+            display: flex;
+        }
+        .makeFlex {
+            display: flex;
+        }
+        .nowrapStyle, .truncate {
+            white-space: nowrap;
+        }
+        
+        .makeFlex.row {
+            flex-direction: row;
+        }
+        .makeFlex.alignSelfStart {
+            align-self: flex-start;
+        }
+        .blackText {
+            color: #000000;
+        }
+        .latoBlack {
+            font-weight: 900;
+        }
+        .latoBold {
+            font-weight: 700;
+        }
+        
+        .font18 {
+            font-size: calc(var(--font-scale, 1) * 18px);
+            line-height: 18px;
+        }
+        .busListingContainer .line-border-top {
+            width: 29px;
+            height: 1px;
+            margin: 13px 8px 10px;
+            border-top: 1.4px solid #e7e7e7;
+        }
+        .busListingContainer .line-border-top {
+            width: 29px;
+            height: 1px;
+            margin: 13px 8px 10px;
+            border-top: 1.4px solid #e7e7e7;
+        }
+        
+        .busListingContainer .busCard .priceSection {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* margin-left: auto; */
+        }
+        .makeFlex.end {
+            align-items: flex-end;
+        }
+        .makeFlex.column {
+            flex-direction: column;
+        }
+        .makeFlex.spaceBetween {
+            justify-content: space-between;
+        }
+        
+        
+        .busListingContainer .detailHeader {
+            display: flex;
+            align-items: center;
+            margin-right: 23px;
+            cursor: pointer;
+            color: #757575;
+        }
