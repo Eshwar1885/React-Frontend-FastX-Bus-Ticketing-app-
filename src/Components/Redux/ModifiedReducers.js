@@ -5,7 +5,6 @@ import {
   SELECT_TRAVELDATE,
   // SELECT_BUS,
   // SELECT_SEATS,
-
   // FETCH_AVAILABLE_SEATS,
   // UPDATE_TOTAL_COST,
 
@@ -13,7 +12,7 @@ import {
 
   SET_BUS_INFO,
   RESET_SELECTED_SEATS,
-  SET_BOOKING_ID 
+  SET_BOOKING_ID, 
 
 } from './Actions';
 
@@ -26,11 +25,12 @@ const initialState = {
 
   busName: '',
   busType: '',
-  selectedSeats:[]
+  selectedSeats:[],  
+
 };
 
 // Reducers
-const originReducer = (state = initialState.origin, action) => {
+const originReducer = (state = initialState, action) => {
   switch (action.type) {
     case SELECT_ORIGIN:
       return {
@@ -42,7 +42,7 @@ const originReducer = (state = initialState.origin, action) => {
   }
 };
 
-const destinationReducer = (state = initialState.destination, action) => {
+const destinationReducer = (state = initialState, action) => {
   switch (action.type) {
     case SELECT_DESTINATION:
       return {
@@ -54,7 +54,7 @@ const destinationReducer = (state = initialState.destination, action) => {
   }
 };
 
-const travelDateReducer = (state = initialState.travelDate, action) => {
+const travelDateReducer = (state = initialState, action) => {
     switch (action.type) {
       case SELECT_TRAVELDATE:
         return {
@@ -166,6 +166,9 @@ const bookingIdReducer = (state = null, action) => {
 
 
 
+
+
+
 // Combine reducers
 const rootReducer = combineReducers({
   origin: originReducer,
@@ -182,5 +185,7 @@ const rootReducer = combineReducers({
   bookingId: bookingIdReducer,
   // resetSeats: reducer
 });
+
+
 
 export default rootReducer;

@@ -1,4 +1,4 @@
-.bsw {
+/* .bsw {
     background: #5d8cc2;
     padding: 11px 0;
     width: 100%;
@@ -404,12 +404,12 @@ html[dir='ltr'] .appendRight10 {
     margin: 15px 0 0;
     border-radius: 16px;
     border: 1px solid #e7e7e7;
-    position: relative; /* Add position relative to create a positioning context */
+    position: relative; 
 }
 
 .busListingContainer .busCardFooter {
-    position: absolute; /* Position absolute to place it at the bottom */
-    bottom: 0; /* Align it to the bottom */
+    position: absolute; 
+    bottom: 0; 
     left: 0;
     right: 0;
     background-color: #fff;
@@ -419,4 +419,153 @@ html[dir='ltr'] .appendRight10 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  td, th {
+    border: 1px solid black;
+    padding: 5px;
+    text-align: left;
+  }
+  th {
+    background-color: #ddd;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('https://images.ctfassets.net/nutlwuf1v0oy/CHozoWVfMLuaEDws4Hqi2/29d06c83b4df1ff9c736259cc8dc295c/home-banner.e085cf784a2737ee155a1ebbeb6615e8.jpg?fm=jpg');
+      background-size: cover;
+      background-position: center;
+    } */
+
+    /* header {
+      background-color: #204a7c;
+      color: #ffffff;
+      padding: 5px 0;
+      text-align: center;
+      font-size: 1.2em;
+    } */
+
+    .busdetails1 {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        transform: scale(1);
+        transition: transform 0.3s ease-in-out;
+        color: #ffffff;
+      }
+  
+      .busdetails1:hover {
+        transform: scale(1.02);
+      }
+  
+      h2 {
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+  
+      .busdetailstable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: rgba(255, 255, 255, 0.5); /* Slightly transparent white for the table */
+      }
+  
+      th, td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        color: #000000; /* Table text color set to black */
+      }
+  
+      th {
+        background-color: #3498db;
+        color: #ffffff;
+      }
+  
+      td {
+        background-color: #f9f9f9;
+      }
+  
+      /* button {
+        background-color: #dc3545;
+        color: #fff;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+  
+      button:hover {
+        background-color: #c82333;
+      }
+  
+      .dashboard-link {
+        text-align: center;
+        margin-top: 20px;
+      }
+  
+      .dashboard-link a {
+        color: #007bff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+  
+      .dashboard-link a:hover {
+        text-decoration: underline;
+      } */

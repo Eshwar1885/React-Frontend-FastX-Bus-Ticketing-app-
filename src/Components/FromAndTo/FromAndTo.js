@@ -14,14 +14,18 @@ function FromAndTo() {
     const dispatch = useDispatch(); // Initializing dispatch function
 
     const Origin = useSelector(state => state.origin); // Example usage of useSelector
-    console.log(Origin)
+    // console.log(Origin)
 
     const Destination = useSelector(state => state.destination); // Example usage of useSelector
-    console.log(Destination)
+    // console.log(Destination)
 
     // const [TravelDate, setDate] = useState('');
     const TravelDate = useSelector(state => state.travelDate); // Example usage of useSelector
-    console.log(TravelDate)
+    // console.log(TravelDate)
+    // const today = new Date().toISOString().split('T')[0]; // Get today's date in the format yyyy-mm-dd
+    const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + 1);
+  const today = currentDate.toISOString().slice(0, 16);
 
     const handleSearch = async () => {
         try {
@@ -73,7 +77,9 @@ function FromAndTo() {
                                                     type="text"
                                                     placeholder="Source"
                                                     className={styles.inputStyleA}
+                                                    // value={Origin.origin}
                                                     value={Origin.origin}
+
                                                     onChange={handleOriginChange} // Using handleOriginChange to update Origin
                                                 />
                                                 <label htmlFor="src">From</label>
@@ -109,7 +115,7 @@ function FromAndTo() {
                                 </div>
                             </div>
                         </div>
-                        <input type="datetime-local" className={styles.c} value={TravelDate.travelDate} onChange={handleTravelDateChange} />
+                        <input type="datetime-local" min={today} className={styles.c} value={TravelDate.travelDate} onChange={handleTravelDateChange} />
                         <div className={styles.CalendarContainer}></div>
                         <button id="search_button" className={styles.busBtn} onClick={handleSearch}>
                             SEARCH BUSES

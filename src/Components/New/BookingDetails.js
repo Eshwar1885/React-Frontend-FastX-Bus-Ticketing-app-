@@ -77,37 +77,96 @@ const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
 
     
       return (
-        <div className="busListingContainer">
-          <div className="busCardContainer">
-            <div className="busCard false" id="">
-              <div className="makeFlex column appendBottom22 busInfo">
-                {/* Bus Name */}
-                <p className="busName">Bus Name: {busInfo.busName}</p>
-                {/* Bus Type */}
-                <p className="busType">Bus Type: {busInfo.busType}</p>
-                {selectedSeats.map((seat, index) => (
-        <div key={index}>
+        // <div className="busListingContainer">
+        //   <div className="busCardContainer">
+        //     <div className="busCard false" id="">
+        //       <div className="makeFlex column appendBottom22 busInfo">
+        //         {/* Bus Name */}
+        //         <p className="busName">Bus Name: {busInfo.busName}</p>
+        //         {/* Bus Type */}
+        //         <p className="busType">Bus Type: {busInfo.busType}</p>
+        //         {selectedSeats.map((seat, index) => (
+        // <div key={index}>
 
-                {/* Seat Numbers */}
-                <p className="seatNumbers">Seat Numbers: {seat.seatNumber}</p>
-                {/* Seat Price */}
-                <p className="seatPrice">Seat Price: {seat.seatPrice}</p>
-                {/* Total Price */}
-        </div>))};
-                <p className="totalPrice">Total Price: {totalPrice}</p>
-                {/* Booked For Which Date */}
-                <p className="bookedForWhichDate">Booked For Which Date: {travelDate.travelDate}</p>
-                <p className="origin">Origin: {origin.origin}</p>
-                <p className="destination">Destination: {destination.destination}</p>
-                <Link to="/payment">
-                {/* <Link to={bookingId ? `/payment/${bookingId}` : "#"}> */}
-                {/* Continue Button */}
-                <button className="continueButton" onClick={handleBooking}>Continue</button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
+        //         {/* Seat Numbers */}
+        //         <p className="seatNumbers">Seat Numbers: {seat.seatNumber}</p>
+        //         {/* Seat Price */}
+        //         <p className="seatPrice">Seat Price: {seat.seatPrice}</p>
+        //         {/* Total Price */}
+        // </div>))}
+        //         <p className="totalPrice">Total Price: {totalPrice}</p>
+        //         {/* Booked For Which Date */}
+        //         <p className="bookedForWhichDate">Booked For Which Date: {travelDate.travelDate}</p>
+        //         <p className="origin">Origin: {origin.origin}</p>
+        //         <p className="destination">Destination: {destination.destination}</p>
+        //         <Link to="/payment">
+        //         {/* <Link to={bookingId ? `/payment/${bookingId}` : "#"}> */}
+        //         {/* Continue Button */}
+        //         <button className="continueButton" onClick={handleBooking}>Continue</button>
+        //         </Link>
+        //       </div>
+        //     </div>
+        //   </div>
+        // </div>
+
+<div className="busdetails1">
+        <table className="busdetailstable">
+      <tr>
+            <th colSpan="2">Journey Information</th>
+          </tr>
+   
+    <tr>
+      <td>Origin</td>
+      <td>Mumbai</td>
+    </tr>
+
+    <tr>
+      <td>Destination</td>
+      <td>Mumbai</td>
+    </tr>
+    <tr>
+      <td>Bus Type</td>
+      <td>Mumbai</td>
+    </tr>
+    <tr>
+      <td>Travel Date</td>
+      <td>Mumbai</td>
+    </tr>
+    {/* <tr>
+      <td>From</td>
+      <td>Mumbai</td>
+    </tr>
+    <tr>
+      <td>From</td>
+      <td>Mumbai</td>
+    </tr> */}
+    </table>
+
+
+    <table className="busdetailstable">
+    <tr>
+      <th>Seat Number</th>
+      <th>Price</th>
+    
+    </tr>
+    {selectedSeats.map((seat, index) => (
+            <tr key={index}>
+              <td>{seat.seatNumber}</td>
+              <td>{seat.seatPrice}</td>
+            </tr>
+          ))}
+    <tr>
+      <td>Origin</td>
+      <td>Mumbai</td>
+    </tr>
+    <tr>
+      <td>Total Cost</td>
+      <td>{totalPrice}</td>
+    </tr>
+    </table>
+    </div>
+
+
   );
 };
 

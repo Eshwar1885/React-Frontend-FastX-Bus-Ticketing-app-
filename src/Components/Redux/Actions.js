@@ -87,3 +87,4 @@ export const setBookingId = (bookingId) => ({
   type: SET_BOOKING_ID,
   payload: bookingId,
 });
+
