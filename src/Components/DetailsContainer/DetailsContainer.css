@@ -1,0 +1,96 @@
+/* body {
+    background-color: #f2f2f2; 
+} */
+
+
+
+.detailsbusListingContainer {
+    border: 1px solid #e0e0e0; 
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); 
+}
+
+
+
+        @media only screen and (max-width: 768px) {
+            .detailsbusListingContainer {
+                width: 100%;
+       }
+}
+
+
+.detailsbusListingContainer .detailsbusCard {
+    -webkit-font-smoothing: antialiased;
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+    /* padding: 16px 20px; */
+    padding: 16px 20px 40px; /* Add more padding at the bottom to create space for the footer */
+
+}
+
+.detailsbusListingContainer .detailsbusCardContainer {
+    background-color: #ffffff;
+    margin: 15px 0 0;
+    border-radius: 16px;
+    border: 1px solid #7f7676;
+    position: relative; /* Add position relative to create a positioning context */
+    padding-bottom: 50px; /* Add padding to create space for the footer */
+}
+
+.detailsbusListingContainer .detailsbusCardFooter {
+    position: absolute; /* Position absolute to place it at the bottom */
+    bottom: 0; /* Align it to the bottom */
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    padding: 8px 16px;
+    border-top: 1px solid #e7e7e7;
+    border-radius: 0 0 16px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* DetailsContainer.css */
+
+.detailsbusListingContainer {
+    background-color: #f2f2f2;
+}
+
+.detailsbusCardContainer {
+    border: 1px solid #e0e0e0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 16px;
+    background-color: #fff;
+}
+
+.detailheader {
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #e7e7e7;
+
+}
+
+.detailbusName {
+    font-size: 35px; /* Adjust the font size as needed */
+    font-weight: bold;
+    font-style: italic;
+    font-family: Arial, sans-serif; /* Change the font family as needed */
+}
+
+.detailsRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.detailLabel {
+    font-weight: bold;
+    margin-right: 10px; /* Adjust the margin here */
+    min-width: 150px; /* Adjust the width as needed */
+}
+
+.detailValue {
+    margin-right: 200px; /* Adjust the spacing between label and value */
+}

@@ -1,4 +1,5 @@
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 function Payment(){
     const bookingId = useSelector(state => state.bookingId);
     console.log(bookingId);
@@ -35,9 +36,11 @@ function Payment(){
     return(
 
         <div>
+            <Link to="/paymentsuccess">
             <button 
             onClick={handlePayment}>Pay
             </button>
+            </Link>
         </div>
 
     );

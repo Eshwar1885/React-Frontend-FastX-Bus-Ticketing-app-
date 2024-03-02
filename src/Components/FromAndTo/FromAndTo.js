@@ -12,13 +12,10 @@ import Navbar from '../Navbar/Navbar';
 function FromAndTo() {
     const navigate = useNavigate();
     const dispatch = useDispatch(); // Initializing dispatch function
-
     const Origin = useSelector(state => state.origin); // Example usage of useSelector
     // console.log(Origin)
-
     const Destination = useSelector(state => state.destination); // Example usage of useSelector
     // console.log(Destination)
-
     // const [TravelDate, setDate] = useState('');
     const TravelDate = useSelector(state => state.travelDate); // Example usage of useSelector
     // console.log(TravelDate)
@@ -26,8 +23,29 @@ function FromAndTo() {
     const currentDate = new Date();
   currentDate.setDate(currentDate.getDate() + 1);
   const today = currentDate.toISOString().slice(0, 16);
+  const [errors, setErrors] = useState({});
+
 
     const handleSearch = async () => {
+        const errors = {};
+        let isValid = true;
+
+        if (!Origin.origin) {
+            errors.origin = 'Please enter a source.';
+            isValid = false;
+        }
+
+        if (!Destination.destination) {
+            errors.destination = 'Please enter a destination.';
+            isValid = false;
+        }
+
+        if (!TravelDate.travelDate) {
+            errors.travelDate = 'Please select a travel date.';
+            isValid = false;
+        }
+
+        if (isValid) {
         try {
             const response = await axios.get('http://localhost:5263/api/Bus/search', {
                 // params: { Origin, Destination, TravelDate },
@@ -41,20 +59,27 @@ function FromAndTo() {
             console.log(response.data)
         } catch (error) {
             console.error('Error searching buses:', error);
-        };
+        } 
+    }
+    else {
+            setErrors(errors);
+        }
     };
 
     const handleOriginChange = (e) => {
-        dispatch(selectOrigin(e.target.value)); // Dispatching action to update Origin in Redux store
+        setErrors((prevState) => ({ ...prevState, origin: '' }));
+        dispatch(selectOrigin(e.target.value));
     };
 
     const handleDestinationChange = (e) => {
-        dispatch(selectDestination(e.target.value)); // Dispatching action to update Destination in Redux store
+        setErrors((prevState) => ({ ...prevState, destination: '' }));
+        dispatch(selectDestination(e.target.value));
     };
 
     const handleTravelDateChange = (e) => {
-      dispatch(selectTravelDate(e.target.value)); // Dispatching action to update Destination in Redux store
-  };
+        setErrors((prevState) => ({ ...prevState, travelDate: '' }));
+        dispatch(selectTravelDate(e.target.value));
+    };
 
 
     return (
@@ -83,6 +108,7 @@ function FromAndTo() {
                                                     onChange={handleOriginChange} // Using handleOriginChange to update Origin
                                                 />
                                                 <label htmlFor="src">From</label>
+                                                {/* {errors.origin && <p className={styles.errorMessage}>{errors.origin}</p>} */}
                                             </div>
                                         </div>
                                     </div>
@@ -110,6 +136,7 @@ function FromAndTo() {
                                                 onChange={handleDestinationChange} // Using handleDestinationChange to update Destination
                                             />
                                             <label htmlFor="dest">To</label>
+                                            {/* {errors.destination && <p className={styles.errorMessage}>{errors.destination}</p>} */}
                                         </div>
                                     </div>
                                 </div>
@@ -117,12 +144,19 @@ function FromAndTo() {
                         </div>
                         <input type="datetime-local" min={today} className={styles.c} value={TravelDate.travelDate} onChange={handleTravelDateChange} />
                         <div className={styles.CalendarContainer}></div>
+                        {/* {errors.travelDate && <p style={{ color: 'red' }}>{errors.travelDate}</p>} */}
                         <button id="search_button" className={styles.busBtn} onClick={handleSearch}>
                             SEARCH BUSES
                         </button>
                     </div>
                 </div>
             </div>
+            {errors.origin && <h5 style={{ color: 'red' }}>{errors.origin}</h5>}
+
+            {errors.destination && <h5 style={{ color: 'red' }}>{errors.destination}</h5>}
+
+            {errors.travelDate && <h5 style={{ color: 'red' }}>{errors.travelDate}</h5>}
+
         </div>
         
     );

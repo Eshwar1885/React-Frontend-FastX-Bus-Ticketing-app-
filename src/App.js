@@ -20,6 +20,8 @@ import BusDetails from './Components/BusDetails/BusDetails';
 import BusActions from './Components/BusActions/BusActions';
 import BookingHistory from './Components/BookingHistory/BookingHistory';
 import RefundRequest from './Components/RefundRequest/RefundRequest';
+import DetailsContainer from './Components/DetailsContainer/DetailsContainer';
+import PaymentSuccess from './Components/PaymentSuccess/PaymentSuccess';
 
 
 
@@ -67,6 +69,10 @@ function App() {
                 <Route path="/bookinghistory" element={<BookingHistory/>}/>
 
                 <Route path="/refundrequest" element={<RefundRequest/>}/>
+                <Route path="/detailscontainer" element={<DetailsContainer/>}/>
+                <Route path="/paymentsuccess" element={<PaymentSuccess/>}/>
+
+
 
 
 
