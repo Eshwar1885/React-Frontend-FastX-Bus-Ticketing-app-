@@ -569,3 +569,18 @@ html[dir='ltr'] .appendRight10 {
       .dashboard-link a:hover {
         text-decoration: underline;
       } */
+
+
+      .detailscontinueButton {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 50px;
+    }
+    
+    .detailscontinueButton:hover {
+        background-color: #0056b3;
+    }
+    

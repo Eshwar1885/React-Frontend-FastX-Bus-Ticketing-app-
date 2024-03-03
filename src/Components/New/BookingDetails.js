@@ -296,6 +296,7 @@ const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
 
 <div className="busdetails1">
         <table className="busdetailstable">
+          <tbody>
       <tr>
             <th colSpan="2">Journey Information</th>
           </tr>
@@ -323,6 +324,7 @@ const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
       <td>Travel Date</td>
       <td>{travelDate.travelDate}</td>
     </tr>
+    </tbody>
     {/* <tr>
       <td>From</td>
       <td>Mumbai</td>
@@ -335,6 +337,7 @@ const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
 
 
     <table className="busdetailstable">
+      <tbody>
     <tr>
       <th>Seat Number</th>
       <th>Price</th>
@@ -350,12 +353,12 @@ const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
       <td>Total Cost</td>
       <td>{totalPrice}</td>
     </tr>
+    </tbody>
     </table>
-
     <Link to="/payment">
-      
-                <button className="continueButton" onClick={handleBooking}>Confirm</button>
-                 </Link>
+      <button className="detailscontinueButton" onClick={handleBooking}>Confirm</button>
+      </Link>
+
     </div>
 
 

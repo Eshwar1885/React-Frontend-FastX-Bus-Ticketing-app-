@@ -239,7 +239,7 @@ function BookingHistory() {
                             <div className="bookingBusListingContainer">
                                 <div className="busCardContainer">
                                     {upcomingBookings.map(booking => (
-                                        <div key={booking.bookingId} className="busCard">
+                                        <div key={booking.bookingId} className="historyBusCard">
                                             <DetailsContainer booking={booking} />
                                             <button onClick={() => confirmCancellation(booking.bookingId)} className="btn btn-danger">Cancel Booking</button>
                                         </div>
@@ -256,7 +256,7 @@ function BookingHistory() {
                             <div className="busListingContainer">
                                 <div className="busCardContainer">
                                     {cancelledBookings.map(booking => (
-                                        <div key={booking.bookingId} className="busCard">
+                                        <div key={booking.bookingId} className="historyBusCard">
                                             <DetailsContainer booking={booking} />
                                         </div>
                                     ))}
@@ -272,7 +272,7 @@ function BookingHistory() {
                             <div className="busListingContainer">
                                 <div className="busCardContainer">
                                     {pastBookings.map(booking => (
-                                        <div key={booking.bookingId} className="busCard">
+                                        <div key={booking.bookingId} className="historyBusCard">
                                             <DetailsContainer booking={booking} />
                                         </div>
                                     ))}

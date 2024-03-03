@@ -67,16 +67,16 @@
 
 
 
-        .bookingBusListingContainer .busCard {
+        .bookingBusListingContainer .historyBusCard {
             -webkit-font-smoothing: antialiased;
-            width: 25%;
+            width: 100%;
             border-radius: 16px 16px 0 0;
             padding: 16px 20px;
         }
         .makeFlex {
             display: flex;
         }
-        .bookingBusListingContainer .busCard .busInfo {
+        .bookingBusListingContainer .historyBusCard .busInfo {
             width: 18vw;
             margin-right: 50px;
         }
@@ -140,7 +140,7 @@
             border-top: 1.4px solid #e7e7e7;
         }
         
-        .bookingBusListingContainer .busCard .priceSection {
+        .bookingBusListingContainer .historyBusCard .priceSection {
             text-align: right;
             display: flex;
             flex-direction: column;

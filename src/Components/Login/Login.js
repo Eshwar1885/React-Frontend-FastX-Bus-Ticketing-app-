@@ -32,14 +32,14 @@ var login = (e) => {
             sessionStorage.setItem("userId",res.data.userId);
             alert("Login success - " + res.data.username);
             setLoggedin(true);
-            console.log({loggedin});
+            // console.log({loggedin});
 
 
             // Redirect to details page
             navigate("/details");
 
 
-            console.log(res.data);
+            // console.log(res.data);
             
         })
         .catch(err => {

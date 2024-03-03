@@ -1,3 +1,4 @@
+import './Payment.css';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 function Payment(){
@@ -37,9 +38,7 @@ function Payment(){
 
         <div>
             <Link to="/paymentsuccess">
-            <button 
-            onClick={handlePayment}>Pay
-            </button>
+            <button className="paymentcontinueButton" onClick={handlePayment}>Confirm Payment</button>
             </Link>
         </div>
 

@@ -22,6 +22,7 @@ import BookingHistory from './Components/BookingHistory/BookingHistory';
 import RefundRequest from './Components/RefundRequest/RefundRequest';
 import DetailsContainer from './Components/DetailsContainer/DetailsContainer';
 import PaymentSuccess from './Components/PaymentSuccess/PaymentSuccess';
+import PrivateRouteBookingHistory from './Components/PrivateRoutes/PrivateRouteBookingHistory';
 
 
 
@@ -35,8 +36,8 @@ function App() {
             {/* <Carousel/> */}
             {/* <FromAndTo/> */}
             {/* <Bus/> */}
-            <BrowserRouter>
-              <Routes>
+          <BrowserRouter>
+            <Routes>
               <Route path="/main" element={<Main />} />
 
               <Route path="/register" element={<Register />} />
@@ -66,7 +67,10 @@ function App() {
 
                 <Route path="/busdetails" element={<BusDetails/>}/>
                 <Route path="/busactions" element={<BusActions/>}/>
+
+                <Route element={<PrivateRouteBookingHistory/>}>
                 <Route path="/bookinghistory" element={<BookingHistory/>}/>
+                </Route>
 
                 <Route path="/refundrequest" element={<RefundRequest/>}/>
                 <Route path="/detailscontainer" element={<DetailsContainer/>}/>
@@ -77,8 +81,8 @@ function App() {
 
 
                  
-              </Routes>
-            </BrowserRouter>
+            </Routes>
+          </BrowserRouter>
     </div>
   );
 }
