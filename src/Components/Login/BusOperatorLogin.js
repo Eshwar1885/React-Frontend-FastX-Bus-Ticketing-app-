@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Navbar from '../Navbar/Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 
-function Login(){
+function BusOperatorLogin(){
 var [username, setUsername] = useState("");
 var [password, setPassword] = useState("");
 var [loggedin, setLoggedin] = useState(false);
@@ -41,7 +41,7 @@ var login = (e) => {
 
 
             // Redirect to details page
-            navigate("/fromandto");
+            navigate("/busactions");
 
 
             // console.log(res.data);
@@ -88,7 +88,7 @@ var login = (e) => {
                                             {/* </Link> */}
                                         </div>
                                         <div>
-                                            <small className="form-text text-muted signup-text">Don't have an Account? <Link to="/register">Sign Up</Link>
+                                            <small className="form-text text-muted signup-text">Don't have an Account? <Link to="/registerbusoperator">Sign Up</Link>
                                             </small>
                                             {/* <span className="signUPtext"><a href="/#" onClick={(e) => getToSignUp(e)}>Sign-Up</a></span> */}
                                         </div>
@@ -107,4 +107,4 @@ var login = (e) => {
 
     );
 }
-export default Login;
+export default BusOperatorLogin;

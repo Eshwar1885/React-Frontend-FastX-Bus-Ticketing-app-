@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react'; // Import useState hook
-import './Navbar.css';
+import './BusOperatorNavbar.css';
 
-function Navbar() {
+function BusOperatorNavbar() {
     const [isLoggedIn, setIsLoggedIn] = useState(!!sessionStorage.getItem('token')); // Initialize login state based on token presence
 
     const handleLogout = () => {
@@ -22,13 +22,13 @@ function Navbar() {
                     <a className="navbar-brand" href="">FastX</a>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item booking-history">
-                            <Link to="/bookinghistory" className="nav-link">Booking History</Link>
+                            <Link to="/refundrequest" className="nav-link">Refund Request</Link>
                         </li>
                         <li className="nav-item">
                             {isLoggedIn ? (
                                 <button className="nav-link active logout-btn" onClick={handleLogout}>Logout</button>
                             ) : (
-                                <Link className="nav-link active" to="/login">Login</Link>
+                                <Link className="nav-link active" to="/busoperatorlogin">Login</Link>
                             )}
                         </li>
                     </ul>
@@ -38,4 +38,4 @@ function Navbar() {
     );
 }
 
-export default Navbar;
+export default BusOperatorNavbar;

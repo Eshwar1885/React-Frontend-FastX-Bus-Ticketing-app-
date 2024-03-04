@@ -17,19 +17,19 @@ function Main(){
             <div className="content">
                 <h1>Explore the World with FastX Bus Services</h1>
                 <div>
-                    <Link to="/">
-                        <button type="button" className='buttonStyle'>Book Your Bus</button>
+                    <Link to="/fromandto">
+                        <button type="button" className='buttonStyle1'>Book Your Bus</button>
                         </Link>
 
                     <Link to="/registerbusoperator">
-                        <button type="button" className='buttonStyle'>Bus Operators, Register Here</button>
+                        <button type="button" className='buttonStyle2'>Bus Operators, Register Here</button>
                         </Link>
                         
                 </div>
             </div>
         </div>
 
-        <div className="about-section">
+        {/* <div className="about-section">
             <div className="about-content">
                 <h2>About FastX Bus Services</h2>
                 <p>
@@ -43,7 +43,7 @@ function Main(){
 
         <div className="scroll-text">
             <p>Scroll down to learn more about our services and offerings.</p>
-            </div>
+            </div> */}
 </div>
     )
 }

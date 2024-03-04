@@ -1,14 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './BusActions.css';
+import BusOperatorNavbar from '../BusOperatorNavbar/BusOperatorNavbar';
 
 function BusActions() {
   return (
+    <div>
+      <BusOperatorNavbar/>
     <div className="bus-actions-container">
       <div className="bus-action-card">
         <h3>Add Route</h3>
         <p>Add a new route for the selected bus.</p>
         <Link to="/add-route">Add Route</Link>
+      </div>
+      <div className="bus-action-card">
+        <h3>Add Bus</h3>
+        <p>Add a new bus</p>
+        <Link to="/addbus">Add Bus</Link>
       </div>
       <div className="bus-action-card">
         <h3>Delete Route</h3>
@@ -32,6 +40,7 @@ function BusActions() {
       </div>
       {/* Add more action cards as needed */}
     </div>
+  </div>
   );
 }
 

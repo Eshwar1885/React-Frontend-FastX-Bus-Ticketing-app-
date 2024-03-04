@@ -14,6 +14,8 @@ import {
   RESET_SELECTED_SEATS,
   SET_BOOKING_ID, 
 
+  
+
 } from './Actions';
 
 // Initial state
@@ -25,7 +27,7 @@ const initialState = {
 
   busName: '',
   busType: '',
-  selectedSeats:[],  
+  selectedSeats:[], 
 
 };
 

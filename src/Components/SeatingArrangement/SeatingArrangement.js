@@ -160,6 +160,7 @@ import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { resetSelectedSeats, saveSelectedSeats } from '../Redux/Actions';
 import { useDispatch, useSelector } from 'react-redux';
+import Navbar from '../Navbar/Navbar';
 
 // Seating arrangement component
 const SeatingArrangement = () => {
@@ -203,6 +204,7 @@ const SeatingArrangement = () => {
   };
 
   return (
+    <div>      <Navbar/>
     <div className="bus">
       <h2>Select and book your seats:</h2>
       <div className="seatside"></div>
@@ -262,6 +264,8 @@ const SeatingArrangement = () => {
         </div>
       </div>
     </div>
+    </div>
+
   );
 };
 

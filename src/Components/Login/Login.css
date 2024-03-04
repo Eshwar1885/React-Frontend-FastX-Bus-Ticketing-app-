@@ -29,11 +29,11 @@ a, a:hover {
 } */
 .myform-area .form-area {
     position: relative;
-    background-color: rgba(92, 52, 167, 0.5); /* Adjusted RGB values for purple */
+    background-color: rgba(103, 58, 183); /* Adjusted RGB values for purple */
     width: 700px;
     height: 400px;
     overflow: hidden;
-    box-shadow: 0 0 40px 0 #0a0a0a;
+    /* box-shadow: 0 0 40px 0 #0a0a0a; */
 }
 
 .myform-area .form-area .form-content, .myform-area .form-area .form-input {
@@ -208,7 +208,7 @@ a, a:hover {
 }
 
 .myform-area .form-area .myform-button .myform-btn:hover {
-    background: #07315B;
+    background: rgba(103, 58, 183);
 }
 
 .signup-text {

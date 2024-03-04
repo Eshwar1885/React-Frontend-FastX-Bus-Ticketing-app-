@@ -31,7 +31,25 @@
     font-size: 90px;
     font-weight: 800;
 }
-.buttonStyle{width: 200px;
+.buttonStyle1{width: 200px;
+    padding: 15px;
+    height: 85px;
+    margin: 20px 5px;
+    text-align: center;
+    border-radius: 25px;
+    color: black;
+    border: 2px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.buttonStyle1:hover{background: rgba(255, 255, 255, 0.5);
+    transition: 0.5s;
+    color: white;
+}
+
+
+.buttonStyle2{width: 200px;
     padding: 15px;
     margin: 20px 5px;
     text-align: center;
@@ -42,7 +60,7 @@
     cursor: pointer;
     font-weight: 600;
 }
-.buttonStyle:hover{background: rgba(92, 52, 167, 0.5);
+.buttonStyle2:hover{background: rgba(255, 255, 255, 0.5);
     transition: 0.5s;
     color: white;
 }
@@ -59,3 +77,5 @@
         height:auto;
     }
 }
+
+

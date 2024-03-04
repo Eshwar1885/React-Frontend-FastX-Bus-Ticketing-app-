@@ -371,6 +371,7 @@ html[dir='ltr'] .appendRight10 {
 
 .busListingContainer .busCardContainer {
     background-color: #fff;
+    width: 700px;
     margin: 15px 0 0;
     border-radius: 16px;
     border: 1px solid #e7e7e7;
@@ -441,12 +442,12 @@ html[dir='ltr'] .appendRight10 {
 /* styles.css */
 
 /* Body styles */
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f2f2f2;
-}
+} */
 
 /* Sidebar styles */
 .sidebar {
@@ -501,3 +502,22 @@ body {
     background-color: #007bff;
     border-color: #007bff;
 }
+
+
+
+
+
+
+.amenities-dropdown-below {
+    position: absolute;
+    top: 100%; /* Position the dropdown below the parent element */
+    left: 0;
+    background-color: #fff; /* Set your desired background color */
+    border: 1px solid #ccc; /* Set your desired border style and color */
+    padding: 10px; /* Adjust the padding as needed */
+    z-index: 1; /* Ensure the dropdown appears above other content */
+    width: relative;
+    border-radius: 25px;
+
+    
+  }

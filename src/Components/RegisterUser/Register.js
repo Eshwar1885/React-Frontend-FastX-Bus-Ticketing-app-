@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from 'axios'; // Import Axios
 import './Register.css';
+import { Link, useNavigate } from "react-router-dom"; // Import useNavigate
 
 function Register() {
     var [username, setUsername] = useState("");
@@ -12,6 +13,7 @@ function Register() {
     var [address, setAddress] = useState("");
 
     var user = {};
+    const navigate = useNavigate(); // Initialize useNavigate
 
     var register = (e) => {
         e.preventDefault();
@@ -28,20 +30,19 @@ function Register() {
             headers: { 'Content-Type': 'application/json' },
             data: JSON.stringify(user)
         };
-        console.log(requestOptions)
 
         axios.post("http://localhost:5263/api/AllUser/Register", requestOptions.data, requestOptions)
-    .then(res => {
-        // Handle successful registration
-        console.log("Registration successful"); // For debugging
-        // Implement logic for successful registration, e.g., redirecting to login page
-    })
-    .catch(err => {
-        // Handle registration failure
-        console.error("Registration failed:", err); // For debugging
-        // Implement logic for handling registration failure, e.g., displaying error message
-    });
-            
+            .then(res => {
+                // Handle successful registration
+                console.log("Registration successful"); // For debugging
+                // Redirect to login page
+                navigate("/login");
+            })
+            .catch(err => {
+                // Handle registration failure
+                console.error("Registration failed:", err); // For debugging
+                // Implement logic for handling registration failure, e.g., displaying error message
+            });
     };
     return (
         <div className="container">
@@ -85,8 +86,15 @@ function Register() {
                                             <input className="registerInfo" type="text" name="address" autoComplete="off" value={address} onChange={(e) => setAddress(e.target.value)} required />
                                             <label>Address</label>
                                         </div>
-                                        <div className="myform-button">
+                                        {/* <div className="myform-button">
+                                            <Link to="/login">
                                             <button onClick={register} type="submit" className="myform-btn">Register</button>
+                                            <Link/>
+                                        </div> */}
+                                        <div className="myform-button">
+                                            {/* <Link to="/login"> */}
+                                            <button onClick={register} type="submit" className="myform-btn">Register</button>
+                                            {/* </Link> */}
                                         </div>
                                     </form>
                                 </div>

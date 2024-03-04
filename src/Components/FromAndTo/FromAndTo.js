@@ -45,26 +45,60 @@ function FromAndTo() {
             isValid = false;
         }
 
-        if (isValid) {
+    //     if (isValid) {
+    //     try {
+    //         const response = await axios.get('http://localhost:5263/api/Bus/search', {
+    //             // params: { Origin, Destination, TravelDate },
+    //             params: {
+    //               Origin: Origin.origin,
+    //               Destination: Destination.destination,
+    //               TravelDate: TravelDate.travelDate,
+    //           },
+    //         });
+    //         navigate('/bus-list', { state: { buses: response.data } }); // Pass the fetched data to the Bus component
+    //         console.log(response.data)
+    //     } catch (error) {
+    //         console.error('Error searching buses:', error);
+    //     } 
+    // }
+    // else {
+    //         setErrors(errors);
+    //     }
+    // };
+
+
+
+
+    if (isValid) {
         try {
             const response = await axios.get('http://localhost:5263/api/Bus/search', {
-                // params: { Origin, Destination, TravelDate },
                 params: {
-                  Origin: Origin.origin,
-                  Destination: Destination.destination,
-                  TravelDate: TravelDate.travelDate,
-              },
+                    Origin: Origin.origin,
+                    Destination: Destination.destination,
+                    TravelDate: TravelDate.travelDate,
+                },
             });
-            navigate('/bus-list', { state: { buses: response.data } }); // Pass the fetched data to the Bus component
-            console.log(response.data)
+
+            if (response.data.length === 0) {
+                alert("No buses available for the selected route and date.");
+            } else {
+                navigate('/bus-list', { state: { buses: response.data } });
+                console.log(response.data);
+            }
         } catch (error) {
             console.error('Error searching buses:', error);
-        } 
-    }
-    else {
-            setErrors(errors);
+            alert("No buses available for the selected route and date.");
         }
-    };
+    } else {
+        let errorMessage = 'Please correct the following errors:\n';
+        if (errors.origin) errorMessage += `- ${errors.origin}\n`;
+        if (errors.destination) errorMessage += `- ${errors.destination}\n`;
+        if (errors.travelDate) errorMessage += `- ${errors.travelDate}\n`;
+        alert(errorMessage);
+    }
+};
+
+
 
     const handleOriginChange = (e) => {
         setErrors((prevState) => ({ ...prevState, origin: '' }));

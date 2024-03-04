@@ -189,6 +189,7 @@ import './BookingDetails.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setBookingId } from '../Redux/Actions';
+import Navbar from '../Navbar/Navbar';
 
 
 function BookingDetails() {
@@ -262,37 +263,7 @@ const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
 
     
       return (
-        // <div className="busListingContainer">
-        //   <div className="busCardContainer">
-        //     <div className="busCard false" id="">
-        //       <div className="makeFlex column appendBottom22 busInfo">
-        //         {/* Bus Name */}
-        //         <p className="busName">Bus Name: {busInfo.busName}</p>
-        //         {/* Bus Type */}
-        //         <p className="busType">Bus Type: {busInfo.busType}</p>
-        //         {selectedSeats.map((seat, index) => (
-        // <div key={index}>
-
-        //         {/* Seat Numbers */}
-        //         <p className="seatNumbers">Seat Numbers: {seat.seatNumber}</p>
-        //         {/* Seat Price */}
-        //         <p className="seatPrice">Seat Price: {seat.seatPrice}</p>
-        //         {/* Total Price */}
-        // </div>))}
-        //         <p className="totalPrice">Total Price: {totalPrice}</p>
-        //         {/* Booked For Which Date */}
-        //         <p className="bookedForWhichDate">Booked For Which Date: {travelDate.travelDate}</p>
-        //         <p className="origin">Origin: {origin.origin}</p>
-        //         <p className="destination">Destination: {destination.destination}</p>
-        //         <Link to="/payment">
-        //         {/* <Link to={bookingId ? /payment/${bookingId} : "#"}> */}
-        //         {/* Continue Button */}
-        //         <button className="continueButton" onClick={handleBooking}>Continue</button>
-        //         </Link>
-        //       </div>
-        //     </div>
-        //   </div>
-        // </div>
+<div><Navbar/>
 
 <div className="busdetails1">
         <table className="busdetailstable">
@@ -355,12 +326,20 @@ const seatIds = [...seatIdsSet]; // Convert Set back to array if needed
     </tr>
     </tbody>
     </table>
-    <Link to="/payment">
+    <br/>
+    {totalPrice !== 0 && (
+        <Link to="/payment">
+          <button className="detailscontinueButton" onClick={handleBooking}>Confirm</button>
+        </Link>
+      )}
+
+    {/* <Link to="/payment">
       <button className="detailscontinueButton" onClick={handleBooking}>Confirm</button>
-      </Link>
+      </Link> */}
 
     </div>
 
+    </div>
 
   );
 };

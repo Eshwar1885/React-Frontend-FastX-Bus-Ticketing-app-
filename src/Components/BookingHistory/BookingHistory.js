@@ -20,16 +20,6 @@ function BookingHistory() {
 
 
     useEffect(() => {
-        
-        
-        // if (userId) {
-        //     console.log("Dispatching setUserId action with userId:", userId);
-        //     dispatch(setUserId(userId));
-        // } else {
-        //     console.error("userId is empty or undefined. Cannot dispatch setUserId action.");
-        // }
-
-        // dispatch(setUserId(userId));
 
         const fetchPastBookings = async () => {
             try {
@@ -101,119 +91,6 @@ function BookingHistory() {
         cancelBooking(bookingIdToCancel);
         closeModal();
     };
-
-    // return (
-    //     <div>
-    //         <div className="container-fluid status-container">
-    //             <ul className="nav nav-tabs statustabs">
-    //                 <li className="nav-item tab-item">
-    //                     <a className="nav-link active" data-toggle="tab" href="#tab1">Upcoming</a>
-    //                 </li>
-    //                 <li className="nav-item tab-item">
-    //                     <a className="nav-link" data-toggle="tab" href="#tab2">Cancelled</a>
-    //                 </li>
-    //                 <li className="nav-item tab-item">
-    //                     <a className="nav-link" data-toggle="tab" href="#tab3">Completed</a>
-    //                 </li>
-    //             </ul>
-
-    //             <div className="tab-content">
-    //                 <div className="tab-pane fade show active" id="tab1">
-    //                     <h4>Upcoming Bookings</h4>
-    //                     {upcomingBookings.length === 0 ? (
-    //                         <p>No upcoming bookings</p>
-    //                     ) : (
-    //                         <div className="bookingBusListingContainer">
-    //                             <div className="busCardContainer">
-    //                                 {upcomingBookings.map(booking => (
-    //                                     <div key={booking.bookingId} className="busCard">
-    //                                         <h2>Bus 1 Details</h2>
-    //                                         <p>Bus Name: {booking.busName}</p>
-    //                                         <p>Bus Type: {booking.busType}</p>
-    //                                         <p>Booked For Which Date: {booking.bookedForWhichDate}</p>
-    //                                         <p>Origin: {booking.origin}</p>
-    //                                         <p>Destination: {booking.destination}</p>
-    //                                         <p>Seat Numbers: {booking.seatNumbers}</p>
-    //                                         <button onClick={() => confirmCancellation(booking.bookingId)} className="btn btn-danger">Cancel Booking</button>
-    //                                     </div>
-    //                                 ))}
-    //                             </div>
-    //                         </div>
-    //                     )}
-    //                 </div>
-    //                 <div className="tab-pane fade" id="tab2">
-    //                     <h4>Cancelled Bookings</h4>
-    //                     {cancelledBookings.length === 0 ? (
-    //                         <p>No cancelled bookings</p>
-    //                     ) : (
-    //                         <div className="busListingContainer">
-    //                             <div className="busCardContainer">
-    //                                 {cancelledBookings.map(booking => (
-    //                                     <div key={booking.bookingId} className="busCard">
-    //                                         <h2>Bus 1 Details</h2>
-    //                                         <p>Bus Name: {booking.busName}</p>
-    //                                         <p>Bus Type: {booking.busType}</p>
-    //                                         <p>Booked For Which Date: {booking.bookedForWhichDate}</p>
-    //                                         <p>Origin: {booking.origin}</p>
-    //                                         <p>Destination: {booking.destination}</p>
-    //                                         <p>Seat Numbers: {booking.seatNumbers}</p>
-    //                                         <p>Status: {booking.status}</p>
-    //                                     </div>
-    //                                 ))}
-    //                             </div>
-    //                         </div>
-    //                     )}
-    //                 </div>
-    //                 <div className="tab-pane fade" id="tab3">
-    //                     <h4>Past Bookings</h4>
-    //                     {pastBookings.length === 0 ? (
-    //                         <p>No past bookings</p>
-    //                     ) : (
-    //                         <div className="busListingContainer">
-    //                             <div className="busCardContainer">
-    //                                 {pastBookings.map(booking => (
-    //                                     <div key={booking.bookingId} className="busCard">
-    //                                         <h2>Bus 1 Details</h2>
-    //                                         <p>Bus Name: {booking.busName}</p>
-    //                                         <p>Bus Type: {booking.busType}</p>
-    //                                         <p>Booked For Which Date: {booking.bookedForWhichDate}</p>
-    //                                         <p>Origin: {booking.origin}</p>
-    //                                         <p>Destination: {booking.destination}</p>
-    //                                         <p>Ticket Count: {booking.ticketCount}</p>
-    //                                         <p>Seat Numbers: {booking.seatNumbers}</p>
-    //                                     </div>
-    //                                 ))}
-    //                             </div>
-    //                         </div>
-    //                     )}
-    //                 </div>
-    //             </div>
-    //         </div>
-
-    //         {/* Confirmation Modal */}
-    //         <div className={`modal ${showConfirmationModal ? 'show' : ''}`} tabIndex="-1" role="dialog" style={{ display: showConfirmationModal ? 'block' : 'none' }}>
-    //             <div className="modal-dialog" role="document">
-    //                 <div className="modal-content">
-    //                     <div className="modal-header">
-    //                         <h5 className="modal-title">Confirm Cancellation</h5>
-    //                         <button type="button" className="close" onClick={closeModal}>
-    //                             <span>&times;</span>
-    //                         </button>
-    //                     </div>
-    //                     <div className="modal-body">
-    //                         <p>Are you sure you want to cancel this booking?</p>
-    //                     </div>
-    //                     <div className="modal-footer">
-    //                         <button type="button" className="btn btn-secondary" onClick={closeModal}>Close</button>
-    //                         <button type="button" className="btn btn-danger" onClick={handleCancellationConfirmation}>Confirm</button>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </div>
-    //     </div>
-    // );
-
-
 
     return (
         <div>

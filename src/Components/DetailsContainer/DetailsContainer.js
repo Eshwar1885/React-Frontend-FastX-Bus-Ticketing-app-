@@ -44,10 +44,10 @@ function DetailsContainer(booking){
                     <div className="detailsRow">
                         <div className="detailLabel">Bus Type:</div>
                         <div className="detailValue">{booking.booking.busType}</div>
-                        <div className="detailLabel">Origin:</div>
+                        {/* <div className="detailLabel">Origin:</div>
                         <div className="detailValue">{booking.booking.origin}</div>
                         <div className="detailLabel">Destination</div>
-                        <div className="detailValue">{booking.booking.destination}</div>
+                        <div className="detailValue">{booking.booking.destination}</div> */}
                     </div>
 
                     <div className="detailsRow">

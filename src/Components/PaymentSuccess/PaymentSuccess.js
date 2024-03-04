@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './PaymentSuccess.css';
 import tickmark from './tickmark.png';
 
@@ -11,14 +12,13 @@ function PaymentSuccess(){
     </div>
 
     <div className="paymentbutton-container">
-        <a href="home.html" >
-            <button className="button id1">Go to Home Page</button>
-        </a>
+        <Link to="/">
+        <button className="button id1">Go to Home Page</button>
+</Link>
 
 
         
-        <a href="bookinghistory.html" >
-        <button className="button id2">View Booking History</button></a>
+        <Link to="/bookinghistory"><button className="button id2">View Booking History</button></Link>
     </div>
     </div>
     )

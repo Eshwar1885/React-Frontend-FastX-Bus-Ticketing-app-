@@ -22,6 +22,7 @@ export const SET_BOOKING_ID = 'SET_BOOKING_ID';
 
 
 
+
 // Action creators
 export const selectOrigin = (origin) => ({
   type: SELECT_ORIGIN,
@@ -87,4 +88,3 @@ export const setBookingId = (bookingId) => ({
   type: SET_BOOKING_ID,
   payload: bookingId,
 });
-
