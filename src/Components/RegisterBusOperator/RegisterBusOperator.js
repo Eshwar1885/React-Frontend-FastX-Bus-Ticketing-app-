@@ -34,7 +34,8 @@ function RegisterBusOperator() {
         axios.post("http://localhost:5263/api/AllUser/Register", requestOptions.data, requestOptions)
             .then(res => {
                 // Handle successful registration
-                console.log("Registration successful"); // For debugging
+                // console.log("Registration successful"); // For debugging
+                window.alert("Registration successful!");
                 // Redirect to login page
                 navigate("/busoperatorlogin");
             })
@@ -90,6 +91,11 @@ function RegisterBusOperator() {
                                             {/* <Link to="/loginbusoperator"> */}
                                             <button onClick={register} type="submit" className="myform-btn">Register</button>
                                             {/* </Link> */}
+                                        </div>
+                                        <div>
+                                            <small className="form-text text-muted signup-text">Already Have an Account? <Link to="/busoperatorlogin">login</Link>
+                                            </small>
+                                            {/* <span className="signUPtext"><a href="/#" onClick={(e) => getToSignUp(e)}>Sign-Up</a></span> */}
                                         </div>
                                     </form>
                                 </div>

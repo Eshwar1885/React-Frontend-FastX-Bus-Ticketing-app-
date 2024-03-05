@@ -83,10 +83,10 @@ function FromAndTo() {
                 alert("No buses available for the selected route and date.");
             } else {
                 navigate('/bus-list', { state: { buses: response.data } });
-                console.log(response.data);
+                // console.log(response.data);
             }
         } catch (error) {
-            console.error('Error searching buses:', error);
+            // console.error('Error searching buses:', error);
             alert("No buses available for the selected route and date.");
         }
     } else {

@@ -7,8 +7,10 @@ import axios from 'axios';
 import Navbar from '../Navbar/Navbar';
 
 function Bus() {
-  const [amenitiesOpen, setAmenitiesOpen] = useState(false);
-  const [amenities, setAmenities] = useState([]);
+  //   const [amenitiesOpen, setAmenitiesOpen] = useState(false);
+
+  const [amenitiesStates, setAmenitiesStates] = useState({});
+  const [amenities, setAmenities] = useState({});
   const [fetchingAmenities, setFetchingAmenities] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -16,17 +18,17 @@ function Bus() {
   const { buses } = location.state;
 
   const toggleAmenities = async (busId) => {
-    setAmenitiesOpen(!amenitiesOpen);
-    if (!amenitiesOpen) {
-      try {
-        setFetchingAmenities(true);
+    setFetchingAmenities(true);
+    try {
+      if (!amenitiesStates[busId]) {
         const response = await axios.get(`http://localhost:5263/api/Amenity/bus/amenitiesForABus?busId=${busId}`);
-        setAmenities(response.data);
-      } catch (error) {
-        console.error('Error fetching amenities:', error);
-      } finally {
-        setFetchingAmenities(false);
+        setAmenities({ ...amenities, [busId]: response.data });
       }
+      setAmenitiesStates({ ...amenitiesStates, [busId]: !amenitiesStates[busId] });
+    } catch (error) {
+      console.error('Error fetching amenities:', error);
+    } finally {
+      setFetchingAmenities(false);
     }
   };
 
@@ -37,8 +39,7 @@ function Bus() {
 
   return (
     <div>
-      <Navbar/>
-      {buses.map(bus => (
+      {buses.map((bus) => (
         <div key={bus.busId}>
           <div id="busList" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', backgroundColor: 'rgb(245, 245, 245)' }}>
             <div style={{ margin: 'auto' }}>
@@ -55,29 +56,6 @@ function Bus() {
                         </div>
                         <p className="makeFlex hrtlCenter secondaryTxt nowrapStyle">{bus.busType}</p>
                       </div>
-                      <div className="makeFlex row appendBottom20 alignSelfStart hrtlCenter">
-                        {/* <div>
-                          <span className="font18 latoBlack blackText appendRight4">16:30</span>
-                          <span className="font14 secondaryTxt capText"> 4 Feb</span>
-                        </div>
-                        <div className="line-border-top"></div>
-                        <div className="font14 secondaryTxt">
-                          <span>04 </span>hrs 
-                          <span> 30 </span>mins
-                        </div>
-                        <div className="line-border-top"></div>
-                        <div>
-                          <span className="font18 blackText appendRight4 latoRegular">21:00</span>
-                          <span className="font14 secondaryTxt capText"> 4 Feb</span>
-                        </div>
-                      </div>
-                      <div className="priceSection">
-                        <div className="makeFlex column end">
-                          <div className="makeFlex appendBottom8">
-                            <span> <i className="fa-solid fa-indian-rupee-sign kafEbu">&nbsp;476</i></span>
-                          </div>
-                        </div> */}
-                      </div>
                     </div>
                     <div className="makeFlex spaceBetween">
                       <div className="busCardFooter makeFlex spaceBetween ">
@@ -85,15 +63,15 @@ function Bus() {
                           <span className="listingSprite newPrimoIcon appendRight24"></span>
                           <li className="detailHeader amenitiesList" onClick={() => toggleAmenities(bus.busId)}>
                             <span className="appendRight5">Amenities</span>
-                            <i className={`fa-solid fa-angle-${amenitiesOpen ? 'up' : 'down'} downArrowSmallIcon`}></i>
+                            <i className={`fa-solid fa-angle-${amenitiesStates[bus.busId] ? 'up' : 'down'} downArrowSmallIcon`}></i>
                           </li>
                         </ul>
-                        {amenitiesOpen && (
+                        {amenitiesStates[bus.busId] && (
                           <div className="amenities-dropdown-below">
                             {fetchingAmenities ? (
                               <p>Loading amenities...</p>
-                            ) : amenities.length > 0 ? (
-                              amenities.map((amenity, index) => (
+                            ) : amenities[bus.busId] && amenities[bus.busId].length > 0 ? (
+                              amenities[bus.busId].map((amenity, index) => (
                                 <p key={index}>{amenity.name}</p>
                               ))
                             ) : (
@@ -116,5 +94,4 @@ function Bus() {
     </div>
   );
 }
-
 export default Bus;

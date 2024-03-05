@@ -5,6 +5,7 @@ import RefundRequest from '../RefundRequest/RefundRequest';
 import { useDispatch, useSelector } from 'react-redux';
 import { setUserId } from '../Redux/Actions';
 import DetailsContainer from '../DetailsContainer/DetailsContainer';
+import Navbar from '../Navbar/Navbar';
 
 
 
@@ -16,7 +17,7 @@ function BookingHistory() {
     const [bookingIdToCancel, setBookingIdToCancel] = useState('');
     const dispatch = useDispatch();
     const userId = sessionStorage.getItem('userId');
-        console.log("Retrieved userId from session storage:", userId); // Log userId retrieved from session storage
+        // console.log("Retrieved userId from session storage:", userId); // Log userId retrieved from session storage
 
 
     useEffect(() => {
@@ -94,6 +95,8 @@ function BookingHistory() {
 
     return (
         <div>
+            <Navbar/>
+            <br/>
             <div className="container-fluid status-container">
                 <ul className="nav nav-tabs statustabs">
                     <li className="nav-item tab-item">

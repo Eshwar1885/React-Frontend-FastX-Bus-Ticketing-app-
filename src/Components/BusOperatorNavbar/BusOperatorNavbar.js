@@ -15,14 +15,23 @@ function BusOperatorNavbar() {
     return (
         <nav className="navbar bg-dark navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <i className="fa-solid fa-bars"></i>
                 </button>
+                {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span className="navbar-toggler-icon"></span>
+                </button> */}
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <a className="navbar-brand" href="">FastX</a>
+                    {/* <a className="navbar-brand" href="">FastX</a> */}
+                    <li className="navbar-brand">
+                            <Link to="/" className="nav-link">Home</Link>
+                        </li>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item booking-history">
                             <Link to="/refundrequest" className="nav-link">Refund Request</Link>
+                        </li>
+                        <li className="nav-item booking-history">
+                            <Link to="/addbus" className="nav-link">Add Bus</Link>
                         </li>
                         <li className="nav-item">
                             {isLoggedIn ? (

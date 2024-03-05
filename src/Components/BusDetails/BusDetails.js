@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './BusDetails.css';
+import Navbar from '../Navbar/Navbar';
+import BusOperatorNavbar from '../BusOperatorNavbar/BusOperatorNavbar';
 
 function BusDetails() {
   const [busDetails, setBusDetails] = useState(null);
@@ -15,7 +17,7 @@ function BusDetails() {
         .then(response => {
           // Set bus details in state
           setBusDetails(response.data);
-          console.log(response.data);
+          // console.log(response.data);
         })
         .catch(error => {
           console.error('Error fetching bus details:', error);
@@ -26,6 +28,7 @@ function BusDetails() {
   }, []); // Empty dependency array to ensure effect runs only once
 
   return (
+    <div><BusOperatorNavbar/>
     <div className="bus-details-container">
       {busDetails ? (
         <div className="bus-details">
@@ -36,12 +39,14 @@ function BusDetails() {
                 <p>Bus Type: {bus.busType}</p>
                 {/* Add more details if needed */}
               </div>
+              <br/>
             </div>
           ))}
         </div>
       ) : (
         <p>Loading bus details...</p>
       )}
+    </div>
     </div>
   );
 }

@@ -58,11 +58,13 @@ function App() {
                 <Route path="/addbus" element={<AddBus/>}/>
 
                 <Route path="/busdetails" element={<BusDetails/>}/>
-                <Route path="/busactions" element={<BusActions/>}/>
+
 
                 <Route element={<PrivateRoute/>}>
                   <Route path="/bookinghistory" element={<BookingHistory/>}/>
                 </Route>
+
+
 
                 <Route path="/refundrequest" element={<RefundRequest/>}/>
                 <Route path="/detailscontainer" element={<DetailsContainer/>}/>

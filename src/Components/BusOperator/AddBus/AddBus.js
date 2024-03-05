@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import './AddBus.css'
+import BusOperatorNavbar from "../../BusOperatorNavbar/BusOperatorNavbar";
 
 function AddBus() {
     const [currentStep, setCurrentStep] = useState(1);
@@ -10,6 +11,7 @@ function AddBus() {
 
     const [amenities, setAmenities] = useState([]);
     const [selectedAmenities, setSelectedAmenities] = useState([]);
+    const token=sessionStorage.getItem('token');
 
     // useEffect(() => {
     //     const getAmenities = () => {
@@ -36,7 +38,7 @@ function AddBus() {
                 })
                 .then(res => {
                     setAmenities(res);
-                    console.log(res);
+                    // console.log(res);
                 })
                 .catch(err => console.error(err));
         };
@@ -63,22 +65,52 @@ function AddBus() {
             amenities: selectedAmenities
         };
         
+        // const requestOptions = {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(bus)
+        // };
+
         const requestOptions = {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
+            headers: { 
+                'Content-Type': 'application/json',
+                'Authorization':'Bearer '+token
+            },
             body: JSON.stringify(bus)
         };
+        // console.log(requestOptions.headers);
 
         fetch("http://localhost:5263/api/Bus/AddBusByBusOperator", requestOptions)
-            .then(res => res.json())
+            // .then(res => res.json())
             .then(res => {
-                console.log(res);
+                if (!res.ok) {
+                    if (res.status === 401) {
+                        throw new Error('You are not authorized to add a bus.');
+                    } else {
+                        throw new Error('Network response was not ok');
+                    }
+                }
+                return res.json();
+            })
+            .then(res => {
+                // console.log(res);
                 if (res.busId) {
                     // Add amenities for the bus if busId is available
                     addAmenitiesForBus(res.busId, selectedAmenities);
+                    // Alert when addBus is successful
+                    window.alert("Bus added successfully!");
                 }
             })
-            .catch(err => console.log(err));
+            .catch(err => {
+                console.log(err);
+                // Display an alert for unauthorized access
+                if (err.message === 'You are not authorized to add a bus.') {
+                    window.alert(err.message);
+                } else {
+                    window.alert('You are not authorized to add a bus.');
+                }
+            });
         };
         const addAmenitiesForBus = (busId, amenityNames) => {
         const requestOptions = {
@@ -90,7 +122,7 @@ function AddBus() {
         fetch("http://localhost:5263/api/BusOperator/AddAmenitiesToBus", requestOptions)
             .then(res => res.json())
             .then(res => {
-                console.log(res);
+                // console.log(res);
                 // Handle the response if needed
             })
             .catch(err => console.log(err));
@@ -196,3 +228,17 @@ function AddBus() {
 }
 
 export default AddBus;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -5,6 +5,19 @@
       color: rgb(255, 255, 255) !important;
     }
   } */
+  @media (max-width: 768px) {
+    /* Make the navbar toggler visible */
+    .navbar-toggler {
+      display: block !important;
+      color: rgb(255, 255, 255) !important;
+    }
+  
+    /* Hide the navbar brand on small screens */
+    .navbar-brand {
+      display: none !important;
+    }
+  }
+  
 
 /* Navbar.css */
 .navbar.bg-dark {

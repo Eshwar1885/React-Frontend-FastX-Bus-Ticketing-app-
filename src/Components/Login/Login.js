@@ -48,7 +48,9 @@ var login = (e) => {
             
         })
         .catch(err => {
-            console.log(err);
+            // console.log(err);
+            alert("Login failed. Please check your username and password."); // Alert for unsuccessful login
+
             setLoggedin(false);
         });
 };

@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  background-color: rgba(103, 58, 183,0.5);
 }
 
 .bus-item {

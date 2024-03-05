@@ -206,6 +206,10 @@ const SeatingArrangement = () => {
   return (
     <div>      <Navbar/>
     <div className="bus">
+    {availableSeats.length === 0 ? (
+        <p>No seats available.</p>
+      ) : (
+        <>
       <h2>Select and book your seats:</h2>
       <div className="seatside"></div>
       <ol className="cabin seatside">
@@ -263,6 +267,8 @@ const SeatingArrangement = () => {
           <span>Total Cost: Rs.{totalCost}</span>
         </div>
       </div>
+      </>
+      )}
     </div>
     </div>
 

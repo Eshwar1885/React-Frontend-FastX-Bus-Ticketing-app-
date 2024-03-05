@@ -34,7 +34,8 @@ function Register() {
         axios.post("http://localhost:5263/api/AllUser/Register", requestOptions.data, requestOptions)
             .then(res => {
                 // Handle successful registration
-                console.log("Registration successful"); // For debugging
+                // console.log("Registration successful"); // For debugging
+                window.alert("Registration successful!");
                 // Redirect to login page
                 navigate("/login");
             })
@@ -95,6 +96,11 @@ function Register() {
                                             {/* <Link to="/login"> */}
                                             <button onClick={register} type="submit" className="myform-btn">Register</button>
                                             {/* </Link> */}
+                                        </div>
+                                        <div>
+                                            <small className="form-text text-muted signup-text">Already have an Account? <Link to="/login">Login</Link>
+                                            </small>
+                                            {/* <span className="signUPtext"><a href="/#" onClick={(e) => getToSignUp(e)}>Sign-Up</a></span> */}
                                         </div>
                                     </form>
                                 </div>

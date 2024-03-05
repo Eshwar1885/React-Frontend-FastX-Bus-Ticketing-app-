@@ -1,0 +1,31 @@
+.refund-request {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color:antiquewhite;
+  }
+  
+  .refund-request p {
+    margin: 5px 0;
+  }
+  
+  .refund-request button {
+    background-color: #bf1eff;
+    color: rgb(10, 10, 10);
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .refund-request button:hover {
+    background-color: #ddd;
+  }
+  .blue-color{
+    background-color: rgba(103, 58, 183,0.2);
+}
+  
